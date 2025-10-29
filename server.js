@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/messages', (req, res) => {
-  db.collection('ghost').insertOne({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
+  db.collection('ghost').insertOne({name: req.body.name, msg: req.body.msg, pic: req.body.pic, genre: req.body.genre, description: req.body.description, thumbUp: 0, thumbDown:0,}, (err, result) => {
     if (err) return console.log(err)
     console.log('saved to database')
     res.redirect('/')

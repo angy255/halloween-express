@@ -20,6 +20,10 @@ h1{
 font-size: 40px;
 }
 
+li{
+  margin-right: 10px;
+}
+
 ul, .genre, .description, button {
   list-style: none;
   display: flex;
@@ -29,18 +33,23 @@ ul, .genre, .description, button {
   font-style: normal;
 }
 
-.picture, .genre, .description {
+img{
   display: flex;
-  justify-content: space-evenly;
-  color: white;
+  width: 80%;
+  height: 50%;
 }
 
-.description, button{
+.genre, .description{
+  display: block;
+}
+
+button{
   margin-left: 20px;
 }
 
 h3 {
   margin-top: 40px;
+  text-align: center;
 }
 
 .title, .year{
@@ -50,8 +59,4 @@ h3 {
 
 .spider, .ghost, .tp, button{
   cursor: pointer;
-}
-
-img{
-  width:25%;
 }

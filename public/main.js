@@ -9,7 +9,6 @@ function playMusic() {
   buttonMusic.play();
 }
 
-
 const audio = new Audio("spooky-sound.mp3");
 //play the audio
 audio.play();
@@ -72,6 +71,9 @@ Array.from(trash).forEach(function (element) {
   element.addEventListener("click", function () {
     const name = this.parentNode.parentNode.childNodes[1].innerText;
     const msg = this.parentNode.parentNode.childNodes[3].innerText;
+    const pic = this.parentNode.parentNode.querySelector("img");
+    const genre = this.parentNode.parentNode.querySelector("genre");
+    const description = this.parentNode.parentNode.querySelector("description");
     fetch("messages", {
       method: "delete",
       headers: {
@@ -80,6 +82,9 @@ Array.from(trash).forEach(function (element) {
       body: JSON.stringify({
         name: name,
         msg: msg,
+        pic: pic,
+        genre: genre,
+        description: description,
       }),
     }).then(function (response) {
       window.location.reload();
