@@ -2,38 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>21 Savage Fans</title>
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="font-awesome.min.css">
+  <title>'Tis the season</title>
+  <link rel="icon" type="image/x-icon" href="pumpkin.svg">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Rubik+Wet+Paint&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Marcellus&family=Rubik+Wet+Paint&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h1>21 Savage</h1>
-  <h2>Why you trappin so hard?</h2>
+  <h1>Spooky Picks 🎃</h1>
+  <h2>This year's TOP FILMS</h2>
 
-
-  <h3>Messages</h3>
+  <button onclick="playMusic()">Play me if you dare...</button>
+  <audio id="myAudio" src="/public/halloween-music.mp3"></audio>
+  
   <ul class="messages">
-  <% for(var i=0; i<messages.length; i++) {%>
+  <% for(let i=0; i<messages.length; i++) {%>
     <li class="message">
-      <span><%= messages[i].name %></span>
-      <span><%= messages[i].msg %></span>
+      <span class = "title"><%= messages[i].name %></span>
+      <span class = "year"><%= messages[i].msg %></span>
       <span><%= messages[i].thumbUp %></span>
-      <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-      <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-      <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      <span class = "spider"><i class="fa-solid fa-spider" aria-hidden="true"></i></span>
+      <span class = "ghost"><i class="fa-solid fa-ghost" aria-hidden="true"></i></span>
+      <span class = "tp"><i class="fa-solid fa-toilet-paper" aria-hidden="true"></i></span>
     </li>
   <% } %>
   </ul>
 
-  <h2>Add a message</h2>
+  <!-- <h2>Add a message</h2>
 
   <form action="/messages" method="POST">
     <input type="text" placeholder="name" name="name">
     <input type="text" placeholder="message" name="msg">
     <button type="submit">Submit</button>
-  </form>
+  </form> -->
 
+  <div class="picture">
+    <img src="/public/scream.jpg">
+    <img src="/public/hereditary.jpg">
+    <img src="/public/the-shining.jpg">
+  </div>
+
+<div class="genre">
+    <p>slasher / mystery</p>
+<p>psychological / supernatural horror</p>  
+    <p>psychological horror</p>  
+</div>
+
+  <div class="description">
+  <p>A masked killer terrorizes a small town, targeting teens obsessed with horror movies and their tropes.</p>
+  <p>After the death of their secretive grandmother, a family unravels terrifying secrets about their ancestry and the horrifying fate they've inherited.</p>
+  <p>A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence.</p>
+</div>
+
+<!-- how to make it so that when one document is tp'd, the entire description and genre and pic are tp'd too -->
+
+  <script src="https://kit.fontawesome.com/66a5eab7b2.js" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 
 </body>

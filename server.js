@@ -6,10 +6,10 @@ const MongoClient = require('mongodb').MongoClient
 let db, collection;
 
 const url = "mongodb+srv://angymacodes_db_user:ONccOtJBvl6GbKFP@cluster0.5wlv0gm.mongodb.net/?appName=Cluster0";
-const dbName = "halloween";
+const dbName = "halloweenie";
 
 app.listen(3000, () => {
-  console.log("Server is running! Check port 3000");
+  console.log('Spooky season is here! Check port 3000');
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;
@@ -22,17 +22,18 @@ app.listen(3000, () => {
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-app.use(express.static('public'))
+app.use(express.static('public')) //this is how we connect the public folder to index.ejs mayyybeee
+
 
 app.get('/', (req, res) => {
-  db.collection('spooky').find().toArray((err, result) => {
+  db.collection('ghost').find().toArray((err, result) => {    //here you could add .sort({thumbUp: -1}) after .find() to sort
     if (err) return console.log(err)
     res.render('index.ejs', {messages: result})
   })
 })
 
 app.post('/messages', (req, res) => {
-  db.collection('spooky').insertOne({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
+  db.collection('ghost').insertOne({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
     if (err) return console.log(err)
     console.log('saved to database')
     res.redirect('/')
@@ -51,13 +52,13 @@ app.put('/messages', (req, res) => {
     thumbDownLogic = req.body.thumbDown - 1
   }
 
-  db.collection('spooky')
+  db.collection('ghost')
   .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
     $set: {
       thumbUp: thumbDownLogic
     }
   }, {
-    sort: {_id: -1},
+    sort: {_id: -1}, //this is serving no purpose here
     upsert: true
   }, (err, result) => {
     if (err) return res.send(err)
@@ -66,10 +67,8 @@ app.put('/messages', (req, res) => {
 })
 
 app.delete('/messages', (req, res) => {
-  db.collection('spooky').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {
+  db.collection('ghost').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {
     if (err) return res.send(500, err)
     res.send('Message deleted!')
   })
 })
-
-// worked on this with classmates...led by Joshi. we broke it and we broke it again, then we fixed it, broke it and fixed again.
