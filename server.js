@@ -22,7 +22,7 @@ app.listen(3000, () => {
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-app.use(express.static('public')) //this is how we connect the public folder to index.ejs mayyybeee
+app.use(express.static('public')) //this is how we connect the public folder to index.ejs so no need to be redundant in addressing public folder in ejs
 
 
 app.get('/', (req, res) => {

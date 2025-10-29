@@ -51,3 +51,7 @@ h3 {
 .spider, .ghost, .tp, button{
   cursor: pointer;
 }
+
+img{
+  width:25%;
+}
