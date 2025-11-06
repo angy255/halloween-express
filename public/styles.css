@@ -10,53 +10,149 @@ body {
 
 h1,
 h2,
-h3,
-li {
+h3 {
   color: white;
   margin-left: 20px;
 }
 
-h1{
-font-size: 40px;
+h1 {
+  font-size: 40px;
 }
 
-li{
-  margin-right: 10px;
+h3{
+  text-align: center;
 }
 
-ul, .genre, .description, button {
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
+button {
+  cursor: pointer;
   font-family: "Creepster", system-ui;
   font-weight: 400;
   font-style: normal;
 }
 
-img{
-  display: flex;
-  width: 80%;
-  height: 50%;
-}
-
-.genre, .description{
-  display: block;
-}
-
-button{
+.playBtn{
   margin-left: 20px;
 }
 
-h3 {
-  margin-top: 40px;
-  text-align: center;
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px auto;
+  gap: 10px;
 }
 
-.title, .year{
-  font-family: "Rubik Wet Paint", system-ui;
+form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Creepster", system-ui;
+}
+
+/* Kanban Board Styles */
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.kanban-column {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #ff6b00;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 300px;
+  max-width: 350px;
+  min-height: 400px;
+  flex: 1;
+}
+
+.kanban-column h3 {
+  margin: 0 0 15px 0;
   font-size: 24px;
+  border-bottom: 2px solid #ff6b00;
+  padding-bottom: 10px;
 }
 
-.spider, .ghost, .tp, button{
-  cursor: pointer;
+.kanban-column.drag-over {
+  background-color: rgba(255, 107, 0, 0.2);
+  border-color: #ffaa00;
 }
+
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ff6b00;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: move;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.message:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
+}
+
+.message[draggable="true"] {
+  cursor: grab;
+}
+
+.message[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.title {
+  font-family: "Rubik Wet Paint", system-ui;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+  color: #ffaa00;
+}
+
+.year {
+  font-family: "Rubik Wet Paint", system-ui;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+  color: #cccccc;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 10px 0;
+  display: block;
+}
+
+.genre {
+  display: block;
+  font-family: "Creepster", system-ui;
+  font-size: 14px;
+  margin: 5px 0;
+  color: #ff6b00;
+}
+
+.description {
+  display: block;
+  font-family: "Creepster", system-ui;
+  font-size: 14px;
+  margin-top: 5px;
+  line-height: 1.4;
+  color: white;
+}
+
+/* had help from chatgpt and claude */
