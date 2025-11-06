@@ -43,7 +43,9 @@ Your seasonal web app for organizing your horror movie watchlist with an interac
 ## 🧛 Screenshot
 
 <p align="center">
-<img width="1650" height="834" alt="halloween-app-screenshot" src="https://github.com/user-attachments/assets/8446af51-00e9-4d55-b55d-f3b1c64d6109" />
+
+  <img width="1792" height="883" alt="halloween-screenshot" src="https://github.com/user-attachments/assets/c466e45f-c2fa-4d55-a5bc-352a40127e7d" />
+
 </p>
 
 ---
